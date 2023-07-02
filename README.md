@@ -42,13 +42,13 @@ This GitHub project showcases the integration of these powerful APIs into a Disc
    ![image](https://github.com/mayank-0407/Astraeus-Bot/assets/97796657/7cab5954-8f44-4481-8877-bd54bd54a100)
 
 # Dependencies
-pip install python-dotenv
-py -3 -m pip install -U discord.py
-pip install youtube_dl
-pip install requests
-pip install google-api-python-client
-pip install pyowm
-pip install ffmpeg-python
+1.pip install python-dotenv
+2.py -3 -m pip install -U discord.py
+3.pip install youtube_dl
+4.pip install requests
+5.pip install google-api-python-client
+6.pip install pyowm
+7.pip install ffmpeg-python
 
 - If you want to use this bot you can invite the bot from the link or add API keys in .env file.
 

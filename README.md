@@ -16,7 +16,7 @@ Have questions or need assistance? Our support team is available 24/7 to help yo
 
 Invite Astraeus to your server and unlock a world of possibilities! Whether you're seeking entertainment, moderation tools, or utilities, Astraeus has got you covered. Harness the power of technology and elevate your Discord community with Astraeus Bot."
 
-#Description:
+# Description:
 This project is a Discord bot that integrates various APIs to provide a range of functionalities, including weather information, GIF search, YouTube video playback, news articles, slang definitions, and jokes. It leverages the following APIs to deliver these features:
 
 1. OpenWeatherMap API:
@@ -41,7 +41,7 @@ This GitHub project showcases the integration of these powerful APIs into a Disc
 
    ![image](https://github.com/mayank-0407/Astraeus-Bot/assets/97796657/7cab5954-8f44-4481-8877-bd54bd54a100)
 
-#Dependencies
+# Dependencies
 pip install python-dotenv
 py -3 -m pip install -U discord.py
 pip install youtube_dl
@@ -51,6 +51,5 @@ pip install pyowm
 pip install ffmpeg-python
 
 - If you want to use this bot you can invite the bot from the link or add API keys in .env file.
-<p align="center">   
+
    ![image](https://github.com/mayank-0407/Astraeus-Bot/assets/97796657/f5c2454a-10ad-449b-af13-0266e0f7f99f)
-<p></p>

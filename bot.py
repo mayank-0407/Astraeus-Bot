@@ -111,6 +111,4 @@ async def on_message(message):
         joke = get_joke()
         await message.channel.send(joke)
 
-
-# client.run('MTEyNTA1ODg0Nzc3NDYxMzUwNA.G5xw12.sYUZsEqdljNdzPv-rihue9BFH8Igwan_WY36P4')
 client.run(os.getenv('env_bot_token'))

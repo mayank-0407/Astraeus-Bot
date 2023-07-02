@@ -39,4 +39,18 @@ This project is a Discord bot that integrates various APIs to provide a range of
 
 This GitHub project showcases the integration of these powerful APIs into a Discord bot, enhancing the user experience and providing a range of engaging features within the server environment.
 
-![image](https://github.com/mayank-0407/Astraeus-Bot/assets/97796657/f5c2454a-10ad-449b-af13-0266e0f7f99f)
+   ![image](https://github.com/mayank-0407/Astraeus-Bot/assets/97796657/7cab5954-8f44-4481-8877-bd54bd54a100)
+
+#Dependencies
+pip install python-dotenv
+py -3 -m pip install -U discord.py
+pip install youtube_dl
+pip install requests
+pip install google-api-python-client
+pip install pyowm
+pip install ffmpeg-python
+
+- If you want to use this bot you can invite the bot from the link or add API keys in .env file.
+<p align="center">   
+   ![image](https://github.com/mayank-0407/Astraeus-Bot/assets/97796657/f5c2454a-10ad-449b-af13-0266e0f7f99f)
+<p></p>

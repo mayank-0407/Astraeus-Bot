@@ -5,6 +5,7 @@
 # pip install google-api-python-client
 # pip install pyowm
 # pip install ffmpeg-python
+# pip install openai
 import discord
 import requests
 import json
@@ -16,10 +17,17 @@ from dictionary import *
 from joke import *
 import os
 from dotenv import load_dotenv
+from discord.ext import commands
 load_dotenv()
 
-intents = discord.Intents().all() 
+intents = discord.Intents().all()
+intents_bot = discord.Intents.default()
+# intents.typing = False
+# intents.presences = False
+intents_bot.message_content = True
 client = discord.Client(intents=intents)
+
+bot = commands.Bot(command_prefix='$', intents=intents_bot)
 
 appreciate=['thanks','Thanks','WellDone','well done']
 
@@ -28,6 +36,7 @@ def get_quotes():
     json_data=json.loads(response.text)
     quote=json_data[0]['q']+"-"+json_data[0]['a']
     return quote
+
 
 @client.event
 async def on_ready():
@@ -110,5 +119,26 @@ async def on_message(message):
     if message.content.startswith('$joke'):
         joke = get_joke()
         await message.channel.send(joke)
+
+    # Moderation
+    if message.content.startswith('$warn'):
+        temp_member = message.content[5:].strip()
+        tempmember = discord.utils.get(message.guild.members, mention=temp_member)
+        if message.author.guild_permissions.kick_members:
+            await message.channel.send(f'{tempmember}-{temp_member} Warning!! Make Sure That you are following the discord rules, Other wise you will be kicked.')
+        else:
+            await message.channel.send("You don't have permission to warn members.")
+
+    if message.content.startswith('$ban'):
+        if message.author.guild_permissions.ban_members:
+            tempmember = message.content[4:].strip()
+            tempmember = discord.utils.get(message.guild.members, mention=tempmember)
+            if tempmember is not None:
+                await tempmember.ban(reason='nothing')
+                await message.channel.send(f'{tempmember} has been banned.')
+            else:
+                await message.channel.send("User not found or not mentioned correctly.")
+        else:
+            await message.channel.send("You don't have permission to ban members.")
 
 client.run(os.getenv('env_bot_token'))
